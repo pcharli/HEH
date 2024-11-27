@@ -1,6 +1,7 @@
 const CACHE_NAME = 'news-web-v1';
 const urlsToCache = [
     '/',
+    '/index.html',
     '/index3.html',
     '/Designer.png',
     '/manifest.json',

@@ -22,9 +22,13 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', event => {
     // Si la requête correspond à l'URL de l'API, on privilégie le réseau
+    
     if (event.request.url === API_URL) {
+        console.log('api')
         return fetch(event.request)
+        
             .then(response => {
+                console.log(response)
                 // Mettre à jour le cache avec la nouvelle réponse
                 if (response.ok) {
                     caches.open(CACHE_NAME)
@@ -34,7 +38,8 @@ self.addEventListener('fetch', event => {
             })
             .catch(error => {
                 // Si l'erreur provient du réseau, on retourne la réponse en cache
-                return caches.match(event.request).then(response => response);
+                console.log(event.request)
+                return caches.match(event.request);
             });
     } else {
         // Pour les autres requêtes, on utilise la stratégie de cache en premier
