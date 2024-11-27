@@ -36,6 +36,25 @@
             margin: 0;
             font-size: 2rem;
         }
+        .install-button {
+            position: fixed;
+            right: -3rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: none;
+            rotate: 90deg;
+            top: 25%;
+            z-index: 10;
+        }
+
+        .install-button:hover {
+            background-color: #029995;
+        }
 
         .container {
             max-width: 1200px;
@@ -155,5 +174,9 @@
 
             .articles {
                 gap: 1rem;
+            }
+            .install-button {
+                position: static;
+                margin-top: 1rem;
             }
         }
