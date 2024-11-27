@@ -34,7 +34,7 @@ function createArticleElement(article) {
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(loadArticles, 5000);
+            setTimeout(loadArticles, 200);
         });
 
         // Register Service Worker
