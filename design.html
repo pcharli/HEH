@@ -171,24 +171,21 @@
                 font-size: 1.5rem;
             }
 
+            .articles {
+                flex-direction: column; /* Stack articles vertically */
+                gap: 1rem;
+            }
+
             .article {
+                flex: none; /* Remove flex property */
+                width: calc(100% - 30px); /* Full width minus padding */
                 min-width: unset;
-                width: 100%;
-                margin: 0;
-                padding: 15px;
+                margin-bottom: 1rem;
             }
 
             .container {
                 padding: 10px;
-            }
-
-            .articles {
-                gap: 1rem;
-            }
-
-            .install-button {
-                position: static;
-                margin-top: 1rem;
+                width: calc(100% - 20px); /* Account for container padding */
             }
 
             .article img {
