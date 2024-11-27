@@ -5,7 +5,9 @@ const urlsToCache = [
     '/Designer.png',
     '/manifest.json',
     '/main.js',
-    '/style.css'
+    '/style.css',
+    '192x192.png',
+    '512x512.png'
 ];
 
 // Séparons l'URL de l'API pour un traitement spécifique

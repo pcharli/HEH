@@ -6,7 +6,9 @@ const urlsToCache = [
     '/manifest.json',
     '/main.js',
     '/style.css',
-    'https://startechs-2024-default-rtdb.europe-west1.firebasedatabase.app/blog.json'
+    'https://startechs-2024-default-rtdb.europe-west1.firebasedatabase.app/blog.json',
+    '192x192.png',
+    '512x512.png'
 ];
 
 self.addEventListener('install', event => {
