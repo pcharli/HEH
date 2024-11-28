@@ -24,6 +24,7 @@
             align-items: center;
             justify-content: center;
             gap: 1rem;
+            position: relative;
         }
 
         .logo {
@@ -80,6 +81,9 @@
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             border-top: 3px solid var(--secondary-color);
+            //edit pierre
+            display: flex;
+            flex-direction: column;
         }
 
         .articles.loaded {
@@ -157,23 +161,57 @@
             
             header {
                 flex-direction: column;
+                //add Pierre
+                padding: 0.5rem;
             }
             
             .header-title {
                 font-size: 1.5rem;
             }
-
+            .articles {
+                flex-direction: column; /* Stack articles vertically */
+                gap: 1rem;
+            }
             .article {
-                min-width: 100%;
-                margin: 0;
+                flex: none; /* Remove flex property */
+                width: calc(100% - 30px); /* Full width minus padding */
+                min-width: unset;
+                margin-bottom: 1rem;
             }
 
             .container {
                 padding: 10px;
+                width: calc(100% - 20px); /* Account for container padding */
             }
 
-            .articles {
-                gap: 1rem;
+            .article img {
+                height: 150px;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .article-title {
+                font-size: 1.2rem;
+                height: auto;
+                margin-bottom: 8px;
+            }
+
+            .article-subtitle {
+                font-size: 1rem;
+                height: auto;
+                width: 100%;
+            }
+
+            .article-content {
+                height: auto;
+                font-size: 0.9rem;
+            }
+
+            .article-meta {
+                font-size: 0.8rem;
+                height: auto;
+                flex-wrap: wrap;
+                gap: 0.5rem;
             }
             .install-button {
                 position: static;
