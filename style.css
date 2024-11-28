@@ -39,7 +39,7 @@
         }
         .install-button {
             position: fixed;
-            right: -3rem;
+            right: 0rem;
             padding: 0.5rem 1rem;
             background-color: var(--secondary-color);
             color: white;
@@ -48,9 +48,16 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             display: none;
-            rotate: 90deg;
+            rotate: 0deg;
             top: 25%;
             z-index: 10;
+            width: 5rem;
+        }
+        .install-button img {
+            max-width: 100%;
+        }
+        .install-button:hover img {
+            filter: invert();
         }
 
         .install-button:hover {
@@ -174,7 +181,7 @@
             }
             .article {
                 flex: none; /* Remove flex property */
-                width: calc(100% - 30px); /* Full width minus padding */
+                width: calc(100% - 40px); /* Full width minus padding */
                 min-width: unset;
                 margin-bottom: 1rem;
             }
@@ -214,7 +221,9 @@
                 gap: 0.5rem;
             }
             .install-button {
-                position: static;
-                margin-top: 1rem;
+                position: fixed;
+                margin-top: -4rem;
+                right: -5px;
+                width: 4rem;;
             }
         }
