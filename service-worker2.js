@@ -28,3 +28,27 @@ self.addEventListener('fetch', event => {
             .then(response => response || fetch(event.request))
     );
 });
+
+//add push notifications
+
+self.addEventListener('push', e => {
+    if( !(self.Notification && self.Notification.permission === 'granted') ) {
+        return;
+    }
+    console.log('test notification')
+    const data = e.data.json() ?? {}
+    console.log(data)
+
+    const myNotification = registration.showNotification(data.title, {
+        body: data.message,
+        tag: "simple-demo-notification-push",
+        icon: "icons/192x192.png"
+    })
+
+    self.addEventListener('notificationclick', e => {
+        e.notification.close()
+        e.waitUntil(
+            clients.openWindow(data.url)
+        )
+    })
+})

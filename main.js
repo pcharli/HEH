@@ -66,7 +66,7 @@ function createArticleElement(article) {
         // Register Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js')
+                navigator.serviceWorker.register('/service-worker2.js')
                     .then(registration => {
                         console.log('ServiceWorker registration successful');
                     })
@@ -75,3 +75,37 @@ function createArticleElement(article) {
                     });
             });
         }
+
+
+        //NOTIFICATION
+const notifyMe = () => {
+    //alert('notify')
+    let myNotification = null
+    const options = {
+        body: "Envoyé par Pierre",
+        icon: "icons/favicon-32x32.png",
+        vibrate: [200,100,200,100,200,100,200],
+        url: "https://www.lesoir.be"
+    }
+    if( !("Notification" in window) ) {
+        alert('Pas de notification dans ce navigateur')
+    } else if (Notification.permission === "granted") {
+        console.log("Notification possible")
+        myNotification = new Notification('Hi me !', options)
+    } else { //demande de permission
+        Notification.requestPermission().then( permission => {
+            if (permission === "granted") {
+                console.log("Notification possible")
+                myNotification = new Notification('Oh, Thank You !', options)
+            }
+        })
+    }
+}
+
+if(Notification.permission !== 'granted') {
+    if(confirm('Recevoir notifications ?')) {
+        notifyMe()
+    }
+}
+
+notifyMe()
