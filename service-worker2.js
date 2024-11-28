@@ -2,17 +2,17 @@ const CACHE_NAME = 'news-web-v1';
 const urlsToCache = [
     '/',
     '/index.html',
-    '/index3.html',
-    '/Designer.png',
+    '/images/Designer.png',
     '/manifest.json',
     '/main.js',
     '/style.css',
     'https://startechs-2024-default-rtdb.europe-west1.firebasedatabase.app/blog.json',
-    '/192x192.png',
-    '/512x512.png',
-    '/telecharger.png',
-    '/apple-touch-icon.png',
-    '/favicon.ico'
+    '/icons/192x192.png',
+    '/icons/512x512.png',
+    '/images/telecharger.png',
+    '/icons/apple-touch-icon.png',
+    '/icons/favicon.ico',
+    '/images/telecharger2.png'
 ];
 
 self.addEventListener('install', event => {
